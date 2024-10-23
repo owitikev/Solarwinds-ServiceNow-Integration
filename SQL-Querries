@@ -1,0 +1,9 @@
+SELECT * FROM SNI_AlertIncidents
+WHERE IncidentNumber LIKE 'INC0478326'
+
+
+--Editing Alert that has since cleared but Alert still lingering
+UPDATE SNI_AlertIncidents
+SET AlertTriggerState = 0
+--SET LogicalState = 3 ## This ensures that the ticket in resolved state does not reopen
+WHERE IncidentNumber LIKE 'INC0478326' -- Change the incident number to fit your need
